@@ -35,35 +35,35 @@ route.post('/resetPassword',controllerMethod.resetPassword)
 route.post('/verification',controllerMethod.emailVerification)
 // route.post('/uploadFile',tokenVerify.verifyToken,multer.single('file'),controllerMethod.s3Controller)
 
-route.post('/facebook',passport.authenticate('fbToken'),oauthcontrollerMethod.facebookOAuth)
-route.get('/auth/google',passport.authenticate('google',{scope:['email','profile']}))
-route.get('/auth/google/callback',passport.authenticate('google'),oauthcontrollerMethod.googleOAuth);
+// route.post('/facebook',passport.authenticate('fbToken'),oauthcontrollerMethod.facebookOAuth)
+// route.get('/auth/google',passport.authenticate('google',{scope:['email','profile']}))
+// route.get('/auth/google/callback',passport.authenticate('google'),oauthcontrollerMethod.googleOAuth);
 
-// funDo APIS for Notes
-route.post('/Note',tokenVerify.verifyToken,notesController.createNote)
-route.get('/Note',tokenVerify.verifyToken,cacheObj.cacheNotes,notesController.readNote)
-route.put('/Note',tokenVerify.verifyToken,notesController.updateNote)
-//route.delete('/Note',tokenVerify.verifyToken,notesController.deleteNote)
-route.delete('/deleteTrashNotes',tokenVerify.verifyToken,notesController.deleteTrashNotes)
-// funDo APIS for Labels
-route.post('/Label',tokenVerify.verifyToken,labelController.createLabel)
-route.get('/Label',tokenVerify.verifyToken,cacheObj.cacheLabels,labelController.readLabel)
-route.put('/Label',tokenVerify.verifyToken,labelController.updateLabel)
-route.delete('/Label',tokenVerify.verifyToken,labelController.deleteLabel)
+// // funDo APIS for Notes
+// route.post('/Note',tokenVerify.verifyToken,notesController.createNote)
+// route.get('/Note',tokenVerify.verifyToken,cacheObj.cacheNotes,notesController.readNote)
+// route.put('/Note',tokenVerify.verifyToken,notesController.updateNote)
+// //route.delete('/Note',tokenVerify.verifyToken,notesController.deleteNote)
+// route.delete('/deleteTrashNotes',tokenVerify.verifyToken,notesController.deleteTrashNotes)
+// // funDo APIS for Labels
+// route.post('/Label',tokenVerify.verifyToken,labelController.createLabel)
+// route.get('/Label',tokenVerify.verifyToken,cacheObj.cacheLabels,labelController.readLabel)
+// route.put('/Label',tokenVerify.verifyToken,labelController.updateLabel)
+// route.delete('/Label',tokenVerify.verifyToken,labelController.deleteLabel)
 
-route.get('/list',tokenVerify.verifyToken,cacheObj.cacheList,notesController.getListController)
-route.get('/pagination/:pageNo/:pageSize',tokenVerify.verifyToken,notesController.pagination)
+// route.get('/list',tokenVerify.verifyToken,cacheObj.cacheList,notesController.getListController)
+// route.get('/pagination/:pageNo/:pageSize',tokenVerify.verifyToken,notesController.pagination)
 
 
-route.post('/addLabelToNote',tokenVerify.verifyToken,notesController.addLabelToNote)
-route.delete('/deleteLabelFromNote',tokenVerify.verifyToken,notesController.deleteLabelFromNote)
-route.delete('/deleteCollaborateIdFromNote',tokenVerify.verifyToken,notesController.deleteCollaborateIdFromNote)
+// route.post('/addLabelToNote',tokenVerify.verifyToken,notesController.addLabelToNote)
+// route.delete('/deleteLabelFromNote',tokenVerify.verifyToken,notesController.deleteLabelFromNote)
+// route.delete('/deleteCollaborateIdFromNote',tokenVerify.verifyToken,notesController.deleteCollaborateIdFromNote)
 
-route.delete('/deleteTrashNotes',tokenVerify.verifyToken,notesController.deleteTrashNotes)
-route.post('/restoreTrashNotes',tokenVerify.verifyToken,notesController.restoreTrashNotes)
-route.post('/emptyTrash',tokenVerify.verifyToken,notesController.emptyTrash)
+// route.delete('/deleteTrashNotes',tokenVerify.verifyToken,notesController.deleteTrashNotes)
+// route.post('/restoreTrashNotes',tokenVerify.verifyToken,notesController.restoreTrashNotes)
+// route.post('/emptyTrash',tokenVerify.verifyToken,notesController.emptyTrash)
 
-route.post('/searchNotes',tokenVerify.verifyToken,notesController.searchNotes)
-route.post('/elasticSearch',tokenVerify.verifyToken,notesController.elasticSearch)
+// route.post('/searchNotes',tokenVerify.verifyToken,notesController.searchNotes)
+// route.post('/elasticSearch',tokenVerify.verifyToken,notesController.elasticSearch)
 
 module.exports = route;
