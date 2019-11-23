@@ -20,23 +20,23 @@ const bodyParser              = require("body-parser");
 const app                     = express();
 const config                  = require('./config/local');
 const route                   = require('./route/route')
-const passport                  =require('passport')
+// const passport                  =require('passport')
 const logger                  =require('./logger/logger')
 const swaggerUi               = require("swagger-ui-express");
 const swaggerDocument         = require('../swagger/swagger.json');
-require('./service/consumerMessageService').sendEmail()
+// require('./service/consumerMessageService').sendEmail()
 
 
-var env = process.env.NODE_ENV;
+var env = "development";
 connectionObj.serviceConnections(env);
 
-app.use(passport.initialize());
-passport.serializeUser(function(user, done) {
-    done(null, user);
-  });
-passport.deserializeUser(function(user, done) {
-    done(null, user);
-  });
+// app.use(passport.initialize());
+// passport.serializeUser(function(user, done) {
+//     done(null, user);
+//   });
+// passport.deserializeUser(function(user, done) {
+//     done(null, user);
+//   });
 app.use(bodyParser.json());
 app.use(expressValidator());
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));

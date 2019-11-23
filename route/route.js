@@ -20,7 +20,7 @@ var passport=require('passport')
 var controllerMethod=require('../controller/user');
 var notesController=require('../controller/note');
 var labelController=require('../controller/label');
-var oauthcontrollerMethod=require('../controller/oauth');
+// var oauthcontrollerMethod=require('../controller/oauth');
 var cacheObj=require('../controller/cache')
 
 const tokenVerify=require('../service/tokenGenerator');
