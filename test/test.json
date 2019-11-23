@@ -1,0 +1,258 @@
+{
+    "registrationObjEmpty": {
+        "firstName": "",
+        "lastName": "",
+        "email": "",
+        "password": "",
+        "cnfPassword": ""
+    },
+    "registrationObjEmailRepeat": {
+        "firstName": "Bhoomi",
+        "lastName": "Rabara",
+        "email": "sangita.awaghad@gmail.com",
+        "password": "1234567890",
+        "cnfPassword": "1234567890"
+    },
+    "registrationObj": {
+        "firstName": "Bhoomi",
+        "lastName": "Rabara",
+        "email": "bhoomihardik125@gmail.com",
+        "password": "1234567890",
+        "cnfPassword": "1234567890"
+    },
+    "registrationFNEmpty": {
+        "firstName": "",
+        "lastName": "Ingle",
+        "email": "ingle0608@gmail.com",
+        "password": "1234567890",
+        "cnfPassword": "1234567890"
+    },
+    "registrationLNEmpty": {
+        "firstName": "Sweta",
+        "lastName": "",
+        "email": "ingle0608@gmail.com",
+        "password": "1234567890",
+        "cnfPassword": "1234567890"
+    },
+    "registrationEmailEmpty": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "",
+        "password": "1234567890",
+        "cnfPassword": "1234567890"
+    },
+    "registrationPasswordEmpty": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@gmail.com",
+        "password": "",
+        "cnfPassword": "1234567890"
+    },
+    "registrationCnfPasswordEmpty": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@gmail.com",
+        "password": "1234567890",
+        "cnfPassword": ""
+    },
+    "registrationPasswordLength": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@gmail.com",
+        "password": "12345",
+        "cnfPassword": "12345"
+    },
+    "registrationPasswordMatch": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@gmail.com",
+        "password": "12345",
+        "cnfPassword": ""
+    },
+    "registrationEmailFormat": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@.com",
+        "password": "123456",
+        "cnfPassword": "123456"
+    },
+    "registrationFNFormat": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@.com",
+        "password": "123456",
+        "cnfPassword": "123456"
+    },
+    "registrationLNFormat": {
+        "firstName": "Sweta",
+        "lastName": "Ingle",
+        "email": "ingle0608@.com",
+        "password": "123456",
+        "cnfPassword": "123456"
+    },
+    "loginObjEmpty": {
+        "email": "",
+        "password": ""
+    },
+    "loginObj": {
+        
+        "email": "sangita.awaghad@gmail.com",
+        "password": "1234567890"
+        
+    },
+    "loginObjEmailNotExist": {
+        "email": "ingle060rt8@gmail.com",
+        "password": "1234567890"
+    },
+    
+    "loginEmailEmpty": {
+     
+        "email": "",
+        "password": "1234567890"
+    },
+    "loginPasswordEmpty": {
+        
+        "email": "ingle0608@gmail.com",
+        "password": ""
+    },
+   
+    "loginPasswordLength": {
+        
+        "email": "ingle0608@gmail.com",
+        "password": "12345"
+    },
+    
+    "loginEmailFormat": {
+       
+        "email": "ingle0608@.com",
+        "password": "123456"
+    },
+    "loginEmailPasswordDoesNotMatch": {
+       
+        "email": "ingle0608@gmail.com",
+        "password": "1234567"
+    },
+
+    "forgotPasswordObjEmpty": {
+      
+        "email": ""
+    },
+    "forgotPasswordObj": {
+      
+        "email": "sangita.awaghad@gmail.com"
+    },"forgotPasswordEmailFormat": {
+      
+        "email": "ingle0608@.com"
+    },
+    "forgotPasswordObjEmailNotExist": {
+        "email": "ingle060rt8@gmail.com"
+    },
+    "resetPasswordObjEmpty": {
+      
+        "email": "",
+        "password":""
+    },
+    "resetToken":{
+        "resetToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJob29taWhhcmRpazEyNUBnbWFpbC5jb20iLCJpYXQiOjE1NzI1MTU0NjgsImV4cCI6MTU3MjYwMTg2OH0.PahDm7-BnCkiMTljuFRNN5eY8BjEaYV7hxQ2tYIP10s"
+    },
+    "resetPasswordObj": {
+      
+        "email": "bhoomihardik125@gmail.com",
+        "password":"12121212"
+    },
+    "resetPasswordEmailFormat": {
+      
+        "email": "ingle0608@.com",
+        "password":""
+    },
+    "resetPasswordbjEmailNotExist": {
+        "email": "ingle060rt8@gmail.com",
+        "password": "1234567890"
+    },
+    
+    "resetPasswordEmailEmpty": {
+     
+        "email": "",
+        "password": "1234567890"
+    },
+    "resetPasswordEmpty": {
+        
+        "email": "ingle0608@gmail.com",
+        "password": ""
+    },
+   
+    "resetPasswordLength": {
+        
+        "email": "ingle0608@gmail.com",
+        "password": "12345"
+    },
+    "tokenObj":{
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZGFmZjcxMTA0YWVjZTRlMzkxZjdiYWEiLCJlbWFpbCI6InBiaG9vbWlrYTI3QHlhaG9vLmNvbSIsImlhdCI6MTU3Mjg0NDE4MSwiZXhwIjoxNTcyOTMwNTgxfQ.ZSg1VKA5giWTLFX_JtBWify56cs8-iBCMhDEUy4kLjA"
+    },
+    "emptyTitle":{
+        "title":""
+    },
+    "titleObj":{
+        "title":"Bhoomi4"
+    },
+    "emptyNoteId":{
+        "noteId":""
+    },
+    "NoteIdObj":{
+         "noteId":"5dbab0e3ebada025dd64bb2d"
+    },
+    "updateObj":{
+        "title":"Bhoomi1",
+        "noteId":"5dbab0e3ebada025dd64bb2d"
+    },
+    "addExistingLabelToNoteObj":{
+        "noteId":"5dbab035274b9225209d8328",
+        "labelId":"5dbab2ea534d5927d331aae4"
+    },
+    "addNewLabelToNote":{
+        "noteId":"5dbab035274b9225209d8328",
+        "label":"Hello_Beautiful"
+    },
+    "addLabelToNoteWithOnlyNoteId":{
+        "noteId":"5dbab0e3ebada025dd64bb2d"
+    },
+    "deleteLabelToNoteObj":{
+    "noteId":"5dbab035274b9225209d8328",
+        "labelId":"5dbab2ea534d5927d331aae4"
+    },
+    "deleteLabelToNoteObjWithoutLabelId":{
+        "noteId":"5dbab035274b9225209d8328"
+    },
+    "deleteLabelToNoteObjWithoutNoteId":{
+         "labelId":"5dbab2ea534d5927d331aae4"
+    },
+    "searchObj":{
+        "searchValue":"Bhoomi"
+    },
+    "labelIdObj":{
+        "label":"beautiful",
+        "labelId":"5dbab2ea534d5927d331aae4"
+    },
+    "labelObj":{
+        "labelId":"5dbab2ea534d5927d331aae4"
+    },
+    "label":{
+        "label":"hello4"
+    },
+    "deleteCollaborateIdObj":{
+        "noteId":"5dbd450541ae2524b0317aaa",
+      "collaborateId":"bhoomikadedaniya29@gmail.com"
+    },
+    "deleteCollaborateIdWithOutNoteIdObj":{
+        "collaborateId":"bhoomikadedaniya29@gmail.com"
+    },
+    "deleteCollaborateIdWithOutCollaborateIdObj":{
+        "noteId":"5dbd450541ae2524b0317aaa"
+      
+    },
+    "emptyObj":{
+        "noteId":"",
+        "collaborateId":""
+    }
+
+}

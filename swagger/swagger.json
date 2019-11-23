@@ -1,0 +1,894 @@
+
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Fundoo Notes Swagger",
+        "description": "This is a fundoo notes swagger to access rest API server ",
+        "license": {
+            "name": "MIT",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "localhost:4000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Users",
+            "description": "API for users in the system"
+        },
+        {
+            "name": "Notes",
+            "description": "API for Notes"
+        },
+        {
+            "name": "Labels",
+            "description": "API for Labels"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "securityDefinitions": {
+        "Token": {
+            "type": "apiKey",
+            "name": "token",
+            "in": "header"
+        }
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/registration": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Create new user in system",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "User that we want to create",
+                        "schema": {
+                            "$ref": "#/definitions/UserRegistration"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "User logged in...!",
+                        "schema": {
+                            "$ref": "#/definitions/UserRegistration"
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Find user in system",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "Get the user",
+                        "schema": {
+                            "$ref": "#/definitions/UserLogin"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "New user created",
+                        "schema": {
+                            "$ref": "#/definitions/UserLogin"
+                        }
+                    }
+                }
+            }
+        },
+        "/forgetPassword": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "Find user email in system to forgot password",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "Get the user email",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Getting a user email id",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                }
+            }
+        },
+        "/resetPassword": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "description": "To update password of user",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "Update password of given email id",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [{
+                    "Token": []
+                }],
+                "responses": {
+                    "200": {},
+                    "responses": {
+                        "200": {
+                            "description": "New password updated",
+                            "schema": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/Note": {
+            "post": {
+                "tags": [
+                    "Notes"
+                ],
+                "description": "To CREATE A NEW NOTE",
+                "parameters": [
+                    {
+                        "name": "user",
+                        "in": "body",
+                        "description": "to create a new note",
+                        "schema": {
+                            "$ref": "#/definitions/createNote"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "security": [{
+                    "Token": []
+                }],
+                    "responses": {
+                        "200": {
+                            "description": "New note has created",
+                            "schema": {
+                                "$ref": "#/definitions/createNote"
+                            }
+                        }
+                    }
+                },
+                "get": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "To Read all the notes from database",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "To Read all the notes from database",
+                            "schema": {
+                                "$ref": "#/definitions/readNote"
+                            }
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security": [{
+                        "Token": []
+                    }],
+                        "responses": {
+                            "200": {
+                                "description": "New note has created",
+                                "schema": {
+                                    "$ref": "#/definitions/readNote"
+                                }
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": [
+                            "Notes"
+                        ],
+                        "description": "To update the note from database",
+                        "parameters": [
+                            {
+                                "name": "user",
+                                "in": "body",
+                                "description": "To update the notes from database",
+                                "schema": {
+                                    "$ref": "#/definitions/updateNote"
+                                }
+                            }
+                        ],
+                        "produces": [
+                            "application/json"
+                        ],
+                        "security": [{
+                            "Token": []
+                        }],
+                            "responses": {
+                                "200": {
+                                    "description": "Note has been updated",
+                                    "schema": {
+                                        "$ref": "#/definitions/updateNote"
+                                    }
+                                }
+                            }
+                        } 
+            },
+            "/list": {
+                "get": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "Listing Notes",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "params",
+                            "description": "Listing Notes"
+                            
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "NoTES Are Listed"
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/addLabelToNote": {
+                "get": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "Listing Notes",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "params",
+                            "description": "Adding A Labels To A Note",
+                            "schema": {
+                                "$ref": "#/definitions/addLabelToNote"
+                            }
+                            
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "Adding A Labels To A Note",
+                                "schema": {
+                                    "$ref": "#/definitions/addLabelToNote"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/deleteLabelFromNote": {
+                "post": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "Listing Notes",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "Adding A Labels To A Note",
+                            "schema": {
+                                "$ref": "#/definitions/deleteLabelFromNote"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "Adding A Labels To A Note",
+                                "schema": {
+                                    "$ref": "#/definitions/deleteLabelFromNote"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "deleteCollaborateIdFromNote":{
+                "delete": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "deleting  Notes",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "deleting A Collaborating Id from A Note",
+                            "schema": {
+                                "$ref": "#/definitions/deleteCollaborateIdFromNote"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "deleting A Collaborate Id from A Note",
+                                "schema": {
+                                    "$ref": "#/definitions/deleteCollaborateIdFromNote"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/deleteTrashNotes":{
+                "delete": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "deleting a Note from trash",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "deleting A Note",
+                            "schema": {
+                                "$ref": "#/definitions/deleteTrashNote"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "deleting a Note from trash",
+                                "schema": {
+                                    "$ref": "#/definitions/deleteTrashNote"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/restoreTrashNotes":{
+                "post": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "restoring a Note from trash",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "deleting A Note",
+                            "schema": {
+                                "$ref": "#/definitions/restoreTrash"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "restoring a Note from trash",
+                                "schema": {
+                                    "$ref": "#/definitions/restoreTrash"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/emptyTrash":{
+                "post": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "restoring a Note from trash",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "deleting All Notes From Trash",
+                            "schema": {
+                                "$ref": "#/definitions/emptyTrash"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "deleting All Notes From Trash",
+                                "schema": {
+                                    "$ref": "#/definitions/emptyTrash"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/searchNotes":{
+                "post": {
+                    "tags": [
+                        "Notes"
+                    ],
+                    "description": "searching a Note",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "searching A Notes",
+                            "schema": {
+                                "$ref": "#/definitions/searchNote"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "searching A Notes",
+                                "schema": {
+                                    "$ref": "#/definitions/searchNote"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            },
+            "/Label":{
+                "post": {
+                    "tags": [
+                        "Labels"
+                    ],
+                    "description": "creating A Labels",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "creating A Labels",
+                            "schema": {
+                                "$ref": "#/definitions/createLabel"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "creating A Labels",
+                                "schema": {
+                                    "$ref": "#/definitions/createLabel"
+                                }
+                               
+                            }
+                        }
+                    }
+                },
+                "delete": {
+                    "tags": [
+                        "Labels"
+                    ],
+                    "description": "deleting A Labels",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "deleting A Labels",
+                            "schema": {
+                                "$ref": "#/definitions/deleteLabel"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "deleting A Labels",
+                                "schema": {
+                                    "$ref": "#/definitions/deleteLabel"
+                                }
+                               
+                            }
+                        }
+                    }
+                },
+                "get": {
+                    "tags": [
+                        "Labels"
+                    ],
+                    "description": "reading A Labels",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "reading A Labels",
+                            "schema": {
+                                "$ref": "#/definitions/getAllLabels"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "reading A Labels",
+                                "schema": {
+                                    "$ref": "#/definitions/getAllLabels"
+                                }
+                               
+                            }
+                        }
+                    }
+                },
+                "put": {
+                    "tags": [
+                        "Labels"
+                    ],
+                    "description": "updating A Labels",
+                    "parameters": [
+                        {
+                            "name": "user",
+                            "in": "body",
+                            "description": "updating A Labels",
+                            "schema": {
+                                "$ref": "#/definitions/updateLabel"
+                            }  
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "security":[{
+                        "Token": []
+                    }],
+                    "responses": {
+                        "200": {},
+                        "responses": {
+                            "200": {
+                                "description": "updating A Labels",
+                                "schema": {
+                                    "$ref": "#/definitions/updateLabel"
+                                }
+                               
+                            }
+                        }
+                    }
+                }
+            } 
+    },
+    "definitions": {
+        "UserRegistration": {
+            "properties": {
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "cnfPassword":{
+                    "type": "string"
+                }
+            }
+        },
+        "UserLogin": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "createNote":{
+            "properties": {
+                "title": {
+                    "type": "string"                                                     
+                },
+                "description": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "reminder": {
+                    "type": "string"
+                },
+                "isReminder": {
+                    "type": "string"
+                },
+                "isPined": {
+                    "type": "string"
+                },
+                "isTrash": {
+                    "type": "string"
+                },
+                "isArchieved": {
+                    "type": "string"
+                },
+                "collaborateIds":[
+                    {
+                        "type": "string"
+                    }
+                ],
+                "label":[
+                    {
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "readNote":{
+            },
+        "updateNote":{
+            "properties": {
+                "noteId":{
+                    "type":"string"
+                },
+                "title": {
+                    "type": "string"                                                     
+                },
+                "description": {
+                    "type": "string"
+                },
+                "color": {
+                    "type": "string"
+                },
+                "reminder": {
+                    "type": "string"
+                },
+                "isReminder": {
+                    "type": "string"
+                },
+                "isPined": {
+                    "type": "string"
+                },
+                "isTrash": {
+                    "type": "string"
+                },
+                "isArchieved": {
+                    "type": "string"
+                },
+                "collaborateIds":[
+                    {
+                        "type": "string"
+                    }
+                ],
+                "label":[
+                    {
+                        "type": "string"
+                    }
+                ]
+            }
+        },
+        "listNotes":{
+            "properties": {
+                "isReminder": {
+                    "type": "string"
+                },
+                "isTrash": {
+                    "type": "string"
+                },
+                "isArchieved": {
+                    "type": "string"
+                }
+           }
+       },
+    "addLabelToNote":{
+        "properties": {
+            "label": {
+                "type": "string"
+            },
+            "labelId": {
+                "type": "string"
+            },
+            "noteId": {
+                "type": "string"
+            }
+        }
+    },
+    "deleteLabelFromNote":{
+        "properties": {
+            "labelId": {
+                "type": "string"
+            },
+            "noteId": {
+                "type": "string"
+            }
+        }
+    },
+    "deleteCollaborateIdFromNote":{
+        "properties": {
+            "collaborateIds":[
+                {
+                    "type": "string"
+                }
+            ],
+            "noteId": {
+                "type": "string"
+            }
+        }
+    },
+    "deleteTrashNote":{
+        "properties": {
+            "noteId": {
+                "type": "string"
+            }
+        }
+    },
+    "restoreTrash":{
+        "properties": {
+            "noteId": {
+                "type": "string"
+            }
+        }
+    },
+    "emptyTrash":{
+
+    },
+    "searchNote":{
+        "properties": {
+           "searchValue":{
+               "type":"string"
+           }
+        }
+    },
+    "createLabel":{
+        "properties": {
+            "label":{
+                "type":"string"
+            }
+         } 
+    },
+    "deleteLabel":{
+        "properties": {
+            "labelId":{
+                "type":"string"
+            }
+         } 
+    },
+    "updateLabel":{
+        "properties": {
+            "labelId":{
+                "type":"string"
+            },
+            "label":{
+                "type":"string"
+            }
+         } 
+    },
+    "getAllLabels":{
+
+    }
+}
+}
