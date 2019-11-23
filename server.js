@@ -41,8 +41,8 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', route);
-app.listen(config.PORT, ()=> {
-    console.log("Server is running on Port: " + config.PORT);
+app.listen(4000, ()=> {
+    console.log("Server is running on Port: " + 4000);
     console.log("   ")
 console.log("   ")
 });
