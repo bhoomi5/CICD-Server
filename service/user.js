@@ -11,7 +11,7 @@
  **************************************************************************/
 //const model = require('../model/userModel')
 const forgetMail = require('./nodeMailer')
-const bcrypt=require('bcrypt-nodejs')
+const bcrypt=require('bcryptjs')
 const jwtTokenGenretor = require('./tokenGenerator')
 const modelObj = require('../model/user')
 // const redisObj = require('../service/redis1')
