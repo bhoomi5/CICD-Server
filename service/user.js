@@ -21,6 +21,8 @@ const path=require('path')
 const event=require('events')
 const emmiter=new event.EventEmitter()
 
+//ttyhuu
+
 // console.log(":path",path.join(__dirname));
 
 
