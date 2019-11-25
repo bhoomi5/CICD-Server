@@ -11,7 +11,7 @@
  **************************************************************************/
 //const model = require('../model/userModel')
 const forgetMail = require('./nodeMailer')
-const bcrypt=require('bcryptjs')
+const bcrypt=require('bcrypt-nodejs')
 const jwtTokenGenretor = require('./tokenGenerator')
 const modelObj = require('../model/user')
 // const redisObj = require('../service/redis1')
@@ -166,10 +166,10 @@ class userService {
                         }
                        
                         let jwtToken = jwtTokenGenretor.generateToken(payload);
-                        let key=logInData._id
-                        let field=process.env.TOKEN
-                        let value=jwtToken.token                               
-                        redisObj.hsetToRedis(key,field,value);
+                        // let key=logInData._id
+                        // let field=process.env.TOKEN
+                        // let value=jwtToken.token                               
+                        // redisObj.hsetToRedis(key,field,value);
                        // redisObj.hgetFromRedis(key,field)
                         bcrypt.compare(userLoginDataObject.password, logInData.password, (err, data) => {
                             if (err) {
