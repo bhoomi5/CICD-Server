@@ -11,6 +11,7 @@
  **************************************************************************/
 //const model = require('../model/userModel')
 const forgetMail = require('./nodeMailer')
+const bcrypt=require('bcrypt-nodejs')
 const jwtTokenGenretor = require('./tokenGenerator')
 const modelObj = require('../model/user')
 // const redisObj = require('../service/redis1')
@@ -27,15 +28,15 @@ const emmiter=new event.EventEmitter()
 
 
 // password encryption Method
-// function encryptPassword(password, callback) {
-//     bcrypt.hash(password, 10, (err, data) => {
-//         if (err) {
-//             return callback(err);
-//         } else {
-//             return callback(null, data)
-//         }
-//     })
-// }
+function encryptPassword(password, callback) {
+    bcrypt.hash(password, 10, (err, data) => {
+        if (err) {
+            return callback(err);
+        } else {
+            return callback(null, data)
+        }
+    })
+}
 
 class userService {
     /**
@@ -56,7 +57,7 @@ class userService {
                 }).catch((err)=> {
                    // console.log("err", err)
                     // password encryption method
-                    // encryptPassword(userRegisterDataObject.password, (err, encryptedPassword) => {
+                    encryptPassword(userRegisterDataObject.password, (err, encryptedPassword) => {
                         if (err) {
                             reject({ 'error': err });
                         }
@@ -89,7 +90,7 @@ class userService {
                             })
 
                         }
-                    // })
+                    })
 
                 })
             })
@@ -170,7 +171,7 @@ class userService {
                         let value=jwtToken.token                               
                         redisObj.hsetToRedis(key,field,value);
                        // redisObj.hgetFromRedis(key,field)
-                        // bcrypt.compare(userLoginDataObject.password, logInData.password, (err, data) => {
+                        bcrypt.compare(userLoginDataObject.password, logInData.password, (err, data) => {
                             if (err) {
                                 reject({ 'error': err });
                                 logger.info('bycrypt==>error');
@@ -192,7 +193,7 @@ class userService {
                                     // return { 'error': true ,'message':'does not match credentials'};
                                 }
                             }
-                        // })
+                        })
                     })
                     .catch(function (error) {
                         reject({ 'error': error, 'message': 'user does not found' });
