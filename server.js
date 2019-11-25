@@ -8,7 +8,7 @@
  * @since           : 1-10-2019
  * 
  **************************************************************************/
-require('dotenv').config();
+// require('dotenv').config();
 require('./config/serviceConnection');
 
 require('./service/google')
@@ -22,8 +22,8 @@ const config                  = require('./config/local');
 const route                   = require('./route/route')
 // const passport                  =require('passport')
 const logger                  =require('./logger/logger')
-const swaggerUi               = require("swagger-ui-express");
-const swaggerDocument         = require('../swagger/swagger.json');
+// const swaggerUi               = require("swagger-ui-express");
+// const swaggerDocument         = require('../swagger/swagger.json');
 // require('./service/consumerMessageService').sendEmail()
 
 
@@ -39,7 +39,7 @@ connectionObj.serviceConnections(env);
 //   });
 app.use(bodyParser.json());
 app.use(expressValidator());
-app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/', route);
 app.listen(4000, ()=> {
     console.log("Server is running on Port: " + 4000);

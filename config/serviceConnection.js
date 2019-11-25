@@ -1,6 +1,6 @@
-const mongoose =require('mongoose');
-var redis = require('redis');
-const es = require('elasticsearch');
+const mongoose=require('mongoose')
+// var redis = require('redis');
+// const es = require('elasticsearch');
 var logger=require('../logger/logger')
 module.exports={
     serviceConnections(env)
@@ -8,19 +8,20 @@ module.exports={
          let configObj=require('../config/'+env)
          let mongoUrl=configObj.mongoDb.url;
          mongoConnection(mongoUrl);
-         let redisHostName=configObj.redis.host;
-         let redisPort=configObj.redis.port
-         redisConnection(redisPort,redisHostName);
-         let elasticUrl=configObj.elasticSearch.url
-         elasticSearchConnection(elasticUrl)
+        //  let redisHostName=configObj.redis.host;
+        //  let redisPort=configObj.redis.port
+        //  redisConnection(redisPort,redisHostName);
+        //  let elasticUrl=configObj.elasticSearch.url
+        //  elasticSearchConnection(elasticUrl)
   }
   }
 function mongoConnection(dbURL){
+    
     mongoose.connect(dbURL, { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
         if (err) {
             logger.error("Connection failed because " + err);
         } else {
-            logger.info("MongoDB database connection established successfully and is connected to the ",dbURL);
+            logger.info("MongoDB database connection established successfully and is connected to the "+dbURL);
         }
     });
     mongoose.connection.on('disconnected', function(){

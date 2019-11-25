@@ -12,15 +12,15 @@
  * @since           : 1-10-2019
  * 
  **************************************************************************/
-const AWS = require('aws-sdk');
-require('dotenv').config({ path: './.env' })
+// const AWS = require('aws-sdk');
+// require('dotenv').config({ path: './.env' })
 
-//initialize the S3 interface by passing our access keys:
-const s3Client = new AWS.S3({
-    accessKeyId: process.env.AWSAccessKeyId, 
-    secretAccessKey: process.env.AWSSecretKey,
+// //initialize the S3 interface by passing our access keys:
+// const s3Client = new AWS.S3({
+//     accessKeyId: process.env.AWSAccessKeyId, 
+//     secretAccessKey: process.env.AWSSecretKey,
 
-});
+// });
 
-module.exports = s3Client;
+// module.exports = s3Client;
 

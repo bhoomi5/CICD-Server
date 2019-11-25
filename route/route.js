@@ -16,12 +16,12 @@
 const express = require("express");
 
 const route = express.Router();
-var passport=require('passport')
+// var passport=require('passport')
 var controllerMethod=require('../controller/user');
-var notesController=require('../controller/note');
-var labelController=require('../controller/label');
+// var notesController=require('../controller/note');
+// var labelController=require('../controller/label');
 // var oauthcontrollerMethod=require('../controller/oauth');
-var cacheObj=require('../controller/cache')
+// var cacheObj=require('../controller/cache')
 
 const tokenVerify=require('../service/tokenGenerator');
 
