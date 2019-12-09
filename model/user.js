@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt');
 
 const userschema = mongoose.Schema;//schema is class in mongoose framework
 
@@ -29,6 +28,7 @@ let userSchemaData = new userschema({
         // type: String,
         // required:true,
         // unique:true
+        // hello
         type: String,
         trim: true,
         lowercase: true,
